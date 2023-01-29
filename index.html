@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhromaon</title>
+    <script src="https://kit.fontawesome.com/9e0688dbc3.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="favicon-32x32.png"/>
+	<link rel="stylesheet" href="css/normalize.css" />
+	<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+    <svg hidden>
+        <defs>
+            <symbol id="check-circle" viewBox="0 0 64 64">
+                <path  d="M32 1C14.8791 1 1 14.8791 1 32C1 49.1209 14.8791 63 32 63C49.1209 63 63 49.1209 63 32C63 14.8791 49.1209 1 32 1ZM32 7C45.8165 7 57 18.1814 57 32C57 45.8165 45.8186 57 32 57C18.1835 57 7 45.8186 7 32C7 18.1835 18.1814 7 32 7ZM49.5255 23.2834L46.7085 20.4436C46.1251 19.8555 45.1754 19.8516 44.5872 20.4351L26.9182 37.9621L19.4443 30.4275C18.8609 29.8394 17.9111 29.8355 17.323 30.4189L14.4831 33.2359C13.895 33.8192 13.8911 34.769 14.4746 35.3573L25.8223 46.7967C26.4056 47.3849 27.3554 47.3887 27.9435 46.8052L49.5171 25.4048C50.1051 24.8213 50.1089 23.8715 49.5255 23.2834Z" fill="red"/>
+            </symbol>
+            <symbol id="search" viewBox="0 0 64 64">
+                <path   d="M63.1296 55.3321L50.6662 42.8708C50.1037 42.3084 49.3411 41.9959 48.541 41.9959H46.5034C49.9537 37.5838 52.0038 32.0344 52.0038 25.9975C52.0038 11.6364 40.3655 0 26.0019 0C11.6384 0 0 11.6364 0 25.9975C0 40.3586 11.6384 51.9949 26.0019 51.9949C32.0398 51.9949 37.5903 49.9451 42.0031 46.4955V48.5328C42.0031 49.3327 42.3156 50.0951 42.8781 50.6576L55.3416 63.1188C56.5166 64.2937 58.4168 64.2937 59.5794 63.1188L63.1171 59.5817C64.2922 58.4068 64.2922 56.507 63.1296 55.3321ZM26.0019 41.9959C17.1638 41.9959 10.0007 34.8466 10.0007 25.9975C10.0007 17.1608 17.1513 9.99902 26.0019 9.99902C34.84 9.99902 42.0031 17.1483 42.0031 25.9975C42.0031 34.8341 34.8526 41.9959 26.0019 41.9959Z" fill="white"/>
+            </symbol>
+            <symbol id="search-prm" viewBox="0 0 64 64">
+                <path   d="M63.1296 55.3321L50.6662 42.8708C50.1037 42.3084 49.3411 41.9959 48.541 41.9959H46.5034C49.9537 37.5838 52.0038 32.0344 52.0038 25.9975C52.0038 11.6364 40.3655 0 26.0019 0C11.6384 0 0 11.6364 0 25.9975C0 40.3586 11.6384 51.9949 26.0019 51.9949C32.0398 51.9949 37.5903 49.9451 42.0031 46.4955V48.5328C42.0031 49.3327 42.3156 50.0951 42.8781 50.6576L55.3416 63.1188C56.5166 64.2937 58.4168 64.2937 59.5794 63.1188L63.1171 59.5817C64.2922 58.4068 64.2922 56.507 63.1296 55.3321ZM26.0019 41.9959C17.1638 41.9959 10.0007 34.8466 10.0007 25.9975C10.0007 17.1608 17.1513 9.99902 26.0019 9.99902C34.84 9.99902 42.0031 17.1483 42.0031 25.9975C42.0031 34.8341 34.8526 41.9959 26.0019 41.9959Z" fill="#4f9bf7"/>
+            </symbol>
+            <symbol id="chevron-down" viewBox="0 0 56 64">
+                <path class="path3" d="M25.8786 47.6845L1.58575 23.3915C0.414125 22.2199 0.414125 20.3204 1.58575 19.1489L4.41913 16.3155C5.58875 15.1459 7.48438 15.1436 8.65675 16.3105L28 35.5631L47.3431 16.3105C48.5155 15.1436 50.4111 15.1459 51.5807 16.3155L54.4141 19.1489C55.5857 20.3205 55.5857 22.22 54.4141 23.3915L30.1214 47.6845C28.9497 48.856 27.0503 48.856 25.8786 47.6845Z" fill="white"/>
+            </symbol>
+                <symbol id="thumbs-up" viewBox="0 0 64 64">
+                <path d="M58.2837 35.8363C59.38 33.98 60 32 60 29.6063C60 24.1044 55.3477 18.9088 49.2725 18.9088H44.7125C45.3275 17.3075 45.8187 15.3925 45.8187 13.0913C45.8187 3.992 41.1075 0 33.91 0C26.2091 0 26.6484 11.8666 24.94 13.575C22.0966 16.4184 18.7381 21.8809 16.345 24H4C1.79087 24 0 25.7909 0 28V58C0 60.2091 1.79087 62 4 62H12C13.8616 62 15.426 60.7282 15.8722 59.0062C21.4359 59.1314 25.2547 63.9987 38.0975 63.9987C39 63.9987 40 64 40.875 64C50.5146 64 54.8732 59.0721 54.9925 52.0838C56.6574 49.7806 57.5299 46.6935 57.16 43.71C58.3918 41.4035 58.868 38.6671 58.2837 35.8363ZM50.565 42.565C52.135 45.2062 50.7225 48.7412 48.8225 49.7612C49.785 55.8587 46.6215 57.9987 42.1825 57.9987H37.455C28.5001 57.9987 22.7014 53.2713 16 53.2713V30H17.365C20.91 30 25.8625 21.1387 29.1825 17.8175C32.7275 14.2725 31.5462 8.36375 33.91 6C39.8187 6 39.8187 10.1225 39.8187 13.0913C39.8187 17.9875 36.2738 20.1813 36.2738 24.9088H49.2725C51.9112 24.9088 53.9888 27.2725 54 29.6362C54.0112 31.9987 52.3975 34.3625 51.2163 34.3625C52.9024 36.1819 53.2626 40.017 50.565 42.565ZM11 54C11 55.6569 9.65687 57 8 57C6.34312 57 5 55.6569 5 54C5 52.3431 6.34312 51 8 51C9.65687 51 11 52.3431 11 54Z" fill="blue"/>
+            </symbol>
+        </defs>
+    </svg>
+
+    <header>
+        <div class="header-content">
+            <h1>Bhromaon</h1>
+            <p>Safe Travel Anywhere</p>
+            <form action="">
+                <input type="text" placeholder="Search Your Travel Destination">
+                <button type="submit" class="btn search__btn">
+                    <svg>
+                        <use xlink:href="#search"></use>
+                    </svg>
+                    Search
+                </button>
+            </form>
+        </div>
+
+        <div class="scroll">
+            <p>Scroll Down</p>
+            <a href="">
+                <svg>
+                    <use xlink:href="#chevron-down"></use>
+                </svg>
+            </a>
+        </div>
+    </header>
+    
+    <div class="navigation">
+        <h2>Bhromaon</h2>
+        <nav>
+            <ul>
+                <li> <a href="">Who We Are</a></li>
+                <li> <a href="">What We Do</a></li>
+                <li> <a href="">Travel With Us</a></li>
+                <li> <a href="">Contact Us</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <main>
+        <div class="choose">
+            <div class="choose-back">
+                <div class="container">
+                   <div class="choose-wrapper">
+                      <div class="choose-content">
+                            <h2 class="choose__title">Why Choose Us</h2>
+                                <p class="choose__text_top">Tion and dislike men who are so beguiled and demoralized by desire by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee</p>
+                                <p class="choose__text">Ddislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that.</p>
+                                <button class="btn choose__btn">Explore places</button>
+                      </div>
+                      <div class="choose-images">
+                         <img src="https://raw.githubusercontent.com/MarkMark1231/exmimg/main/img/why_omg1.webp" alt="" class="choose-img_center" >
+                         <img src="https://raw.githubusercontent.com/MarkMark1231/exmimg/main/img/why_omg2.webp" alt="" class="choose-img_end" >
+                      </div>
+                   </div>
+                </div>
+             </div>
+            </div>
+
+        <div class="choose-items">
+            <div class="choose-container">
+               <div class="choose-items-wrapper">
+                  <ul class="choose-list">
+                     <div class="choose-item">
+                        <svg>
+                            <use xlink:href="#search-prm"></use>
+                        </svg>
+                            
+                        <h3 class="choose-item__title">Search Places</h3>
+                     </div>
+                     <div class="choose-item">
+                        <svg>
+                            <use xlink:href="#check-circle"></use>
+                        </svg>
+                        <h3 class="choose-item__title">Select places</h3>
+                     </div>
+                     <div class="choose-item">
+                        <svg>
+                            <use xlink:href="#thumbs-up"></use>
+                        </svg>
+                        <h3 class="choose-item__title">Book & Enjoy</h3>
+                     </div>
+                  </ul>
+               </div>
+            </div>
+         </div>
+
+         <div class="spain-section">
+            <div class="spain-container">
+               <div class="spain-section-wrapper">
+                  <div class="spain-section-content">
+                     <h4>Spain</h4>
+                     <h5>Grand Spain Madrid</h5>
+                     <p>But I must explain to you how all this mistaken idea of account to denouncing pleasure and praising pain was account born and I account will give you a complete account of the system</p>
+                     <button class="btn spain-section__btn">Book now</button>
+                  </div>
+               </div>
+            </div>
+        </div>
+
+         <div class="spain-section spain-section_second">
+            <div class="spain-container_second">
+               <div class="spain-section-wrapper">
+                  <div class="spain-section-content spain-sectio-content_second">
+                     <h4 class="spain-section__country">Spain</h4>
+                     <h5 class="spain-section__title">Grand Spain Madrid</h5>
+                     <p class="spain-section__text">But I must explain to you how all this mistaken idea of account to denouncing pleasure and praising pain was account born and I account will give you a complete account of the system</p>
+                     <button class="btn spain-section__btn">Book Now</button>
+                  </div>
+               </div>
+            </div>
+        </div>
+
+        <div class="tourist">
+            <div class="container">
+                <div class="tourist-wrapper">
+                    <h2>What Our Tourist Say</h2>
+                    <div class="tourist-content">
+                        <div class="tourist-photo"><img src="https://raw.githubusercontent.com/MarkMark1231/exmimg/main/img/WhatTouristImg.webp" alt=""></div>
+                            <div class="tourist-comment">
+                                <h5>Sam Sumon</h5>
+                                <p><i class="fa-solid fa-quote-left"></i> But I must explain to you how all this mistaken idea of account to denouncinpleasure and praising pain But I must explain to you how all this mistaken idea of account to nai denouncing pleasure and praising pain was account born and I account will give you a complete account of the system was account born and I account will give you a nai the complete account of the system</p>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-wrapper">
+                   <h3>Bhromaon</h3>
+                   <p>Safe Travel Anywhere</p>
+                   <ul class="footer-social">
+                      <li>
+                         <a href="#">   
+                            <i class="fa fa-facebook-f"></i>
+                         </a>
+                      </li>
+                      <li>
+                         <a href="#">
+                            <i class="fa fa-twitter"></i>
+                         </a>
+                      </li>
+                      <li>
+                         <a href="#">
+                               <i class="fa fa-linkedin"></i>
+                         </a>
+                      </li>
+                      <li>
+                         <a href="#">
+                            <i class="fa fa-brands fa-youtube"></i>
+                         </a>
+                      </li>
+                      <li>
+                         <a href="#">
+                               <i class="fa fa-pinterest"></i>
+                         </a>
+                      </li>
+                   </ul>
+                </div>
+             </div>
+        </footer>
+    </main>
+</body>
+</html>
